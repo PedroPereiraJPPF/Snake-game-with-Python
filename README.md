@@ -6,7 +6,7 @@ O clássico jogo da cobrinha desenvolvido em Python, utilizando a biblioteca Pyg
 ### 📋 Pré-requisitos
 
 Para rodar o programa é necessário:<br>
-ter o Python 3 instalado.<br>
+ter o Python3 instalado.<br>
 Instalar o Pygame.<br>
 
 ```

@@ -4,12 +4,11 @@ from sys import exit
 from random import randint
 
 pygame.init()
-
-pygame.mixer.music.set_volume(0.2)
-somDeFundo = pygame.mixer.music.load('pygame/Fundo.mp3')
-pygame.mixer.music.play(-1)
-
-colisão = pygame.mixer.Sound('pygame/smw_coin.wav')
+#Todas as amusicas comentadas
+    #pygame.mixer.music.set_volume(0.2)
+    #somDeFundo = pygame.mixer.music.load('pygame/Fundo.mp3')
+    #pygame.mixer.music.play(-1)
+    #colisão = pygame.mixer.Sound('pygame/smw_coin.wav')
 
 width = 640
 height = 480
@@ -18,7 +17,7 @@ yCobra = int(height/2)
 
 Velocidade = 5
 
-xControle = 20
+xControle = 5
 yControle = 0
 
 morreu = False
@@ -44,7 +43,7 @@ def aumentarCobra(listaCobra):
 
 
 def reiniciar():
-    global morreu, listaCabeça, listaCobra, xCobra, yCobra, xComida, yComida, pontos, comprimentoI
+    global morreu, listaCabeça, listaCobra, xCobra, yCobra, xComida, yComida, pontos, comprimentoI, Velocidade, xControle
     morreu = False
     listaCobra = []
     listaCabeça = []
@@ -54,7 +53,8 @@ def reiniciar():
     yComida = randint(50, 430)
     pontos = 0
     comprimentoI = 5
-
+    Velocidade = 5
+    xControle = 5
 
 while True:
     clock.tick(30)
@@ -67,7 +67,7 @@ while True:
             pygame.quit()
             exit()
 
-        # movers
+        # mover
         if event.type == KEYDOWN:
             if event.key == K_a:
                 if xControle == Velocidade:
@@ -113,9 +113,10 @@ while True:
     if comida.colliderect(cobra):
         xComida = randint(40, 600)
         yComida = randint(50, 430)
-        colisão.play()
+        #colisão.play()
         pontos += 1
         comprimentoI += 1
+        Velocidade += 1
     if cobra.colliderect(borda) or cobra.colliderect(borda2) or cobra.colliderect(borda3) or cobra.colliderect(borda4):
         fonte2 = pygame.font.SysFont('arial', 20, True, True)
         mensagem = 'Pressione R para jogar novamente'

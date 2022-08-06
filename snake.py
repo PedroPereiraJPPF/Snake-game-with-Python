@@ -43,7 +43,7 @@ def aumentarCobra(listaCobra):
 
 
 def reiniciar():
-    global morreu, listaCabeça, listaCobra, xCobra, yCobra, xComida, yComida, pontos, comprimentoI, Velocidade, xControle
+    global morreu, listaCabeça, listaCobra, xCobra, yCobra, xComida, yComida, pontos, comprimentoI, Velocidade, xControle, yControle
     morreu = False
     listaCobra = []
     listaCabeça = []
@@ -55,6 +55,7 @@ def reiniciar():
     comprimentoI = 5
     Velocidade = 5
     xControle = 5
+    yControle = 0
 
 while True:
     clock.tick(30)
